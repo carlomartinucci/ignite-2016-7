@@ -1,0 +1,88 @@
+body {
+  background-color: black;
+}
+
+#videodiv {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: -1;
+}
+
+#content {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+	background-image: url("../img/0.jpg");
+  background-size: 100%;
+}
+
+#progressdiv {
+  position: relative;
+  bottom: -47vh;
+  right: -19vw;
+  width: 30vw;
+}
+
+#content p {
+  font-size: 20vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  border-radius: 3vh;
+  padding: 0 5vh;
+  background-color: rgba(255,255,255,0.3);
+  text-align: center;
+}
+
+#content #start {
+  left: 20%;
+  cursor: pointer;
+  color: rgba(255,83,13,0.6);
+  background-color: rgba(255,255,255,0.3);
+}
+
+#content #start:hover {
+  color: rgba(255,83,13,0.6);
+  background-color: rgba(255,255,255,0.8);
+}
+
+#content #start:active {
+  color: rgba(255,83,13,1);
+  background-color: rgba(255,255,255,0.8);
+}
+
+.progress {
+  background-color: rgba(0,0,0,0);
+  height: 4px;
+  border-radius: 2px;
+}
+
+.spiegami {
+  letter-spacing: -10px;
+}
+
+#actual-slide {
+  position: absolute;
+  top: 1vh;
+  right: 1vh;
+  min-width: 6vh;
+  height: 6vh;
+  line-height: 4vh;
+  text-align: center;
+  font-size: 4vh;
+  border-radius: 3vh;
+  padding: 1vh;
+  background-color: rgba(255,255,255,0.3);
+}
+
+/*.full {
+    background: url("#") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+*/

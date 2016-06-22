@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html class="full" lang="en">
+<!-- Make sure the <html> tag is set to the .full CSS class. Change the background image in the full.css file. -->
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Uqido Ignite - 20 maggio 2016">
+  <meta name="author" content="Carlo Martinucci">
+  <meta name="title" content="Uqido Ignite maggio 2016">
+
+  <title>Uqido Ignite maggio 2016</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="css/the-big-picture.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+</head>
+
+<body>
+  <div id="videodiv">
+    <video id="videomp4" width="100%" height="100%">
+      <source src="vid/uqidocarlo.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div id="content">
+    <div id="change-content">
+      <p id="start" onClick="startIgnite()">
+        <i class="fa fa-fire" aria-hidden="true"></i>
+      </p>
+    </div>
+    <div id="progressdiv">
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 0%; background-color:#333;"></div>
+      </div>
+    </div>
+
+    <div id="actual-slide">
+      <span style="padding: 0 1vh">Carlo Martinucci</span>
+    </div>
+
+  </div>
+
+  <div style="display:none;">
+    <h1>Cinque secondi</h1>
+    <p>Spiegami: una piattaforma su internet per sviluppare e esplorare ragionamenti.</p>
+
+    <h1>Trenta secondi</h1>
+
+    <h1>Trecento secondi</h1>
+
+      <h2>1</h2>
+    <div id="1">
+    <p><i class="fa fa-facebook-square"></i></p>
+    </div>
+    <p>So che anche voi, come me, almeno una volta avete fatto un errore: vi siete messi a discutere con qualcuno su facebook.</p>
+
+      <h2>2</h2>
+    <div id="2">
+    <p style="color: rgba(255,0,0,0.7)"><i class="fa fa-facebook-square"></i></p>
+    </div>
+    <p>All'inizio sembrava che andasse tutto bene (sembra sempre andare tutto bene, all'inizio), ma poi sono nate le incomprensioni.</p>
+
+      <h2>3</h2>
+    <div id="3">
+    <p><i class="fa fa-female" style="color: rgba(255, 115, 132,0.7)"></i> <i class="fa fa-male" style="color: rgba(0,127,255,0.7)"></i></p>
+    </div>
+    <p>E' colpa di facebook? Di tutta la tecnologia? Dovremmo discutere solo faccia a faccia? Avremmo buoni motivi per diffidare anche dei libri</p>
+
+      <h2>4</h2>
+    <div id="4">
+    <p><i class="fa fa-quote-left"></i> <i class="fa fa-quote-right"></i></p>
+    </div>
+    <p>Come diceva Socrate: "Lo scritto non risponde alle domande e alle obiezioni dell'interlocutore, ma interrogato dà sempre la stessa risposta".</p>
+
+      <h2>5</h2>
+    <div id="5">
+    <p style="color: rgba(255,0,0,0.7)">404</p>
+    </div>
+    <p>Quel che è certo è che attualmente non esiste uno strumento online per ragionare e capire ragionamenti altrui. E vi assicuro che l'ho cercato, e non ho trovato niente di soddisfacente.</p>
+
+      <h2>6</h2>
+    <div id="6">
+      <p style="color: rgba(10,10,123,0.7); transition: color 1s;" class="change-color"><i class="fa fa-comment"></i></p>
+    </div>
+    <p>Perché l'ho cercato? Perché vorrei essere in grado di cambiare idea di fronte a un ragionamento convincente. Perché ci sono tante persone di cui ho stima che pensano diversamente da me, e voglio capire le loro ragioni.</p>
+
+      <h2>7</h2>
+    <div id="7">
+      <p style="color: rgba(10,123,10,0.7)"><i class="fa fa-ban"></i></p>
+    </div>
+    <p> Non è facile avere la lucidità mentale per cambiare idea, l'onestà di dire "mi stavo sbagliando". Io vorrei averla, vorrei poter dire "ho sbagliato, cambio idea su qualcosa in cui credevo", se messo di fronte alle giuste argomentazioni.</p>
+
+      <h2>8</h2>
+    <div id="8">
+      <p><i class="fa fa-list-ol"></i></p>
+    </div>
+    <p>E dico di più: il giusto strumento online può arrivare dove a volte la discussione a voce non può. Ma solo se è fatto molto bene e risponde a vari requisiti.</p>
+
+      <h2>9</h2>
+    <div id="9">
+      <p class="spiegami">Spiegami</p>
+    </div>
+    <p>Io ce l'ho in mente, e per ora si chiama Spiegami (o explainto.me). </p>
+
+      <h2>10</h2>
+    <div id="10">
+      <p class="sitetree"><i class="fa fa-sitemap"></i></p>
+    </div>
+    <p>Deve essere fondato sugli argomenti: delle premesse che tramite un'implicazione mostrano una conclusione. Blocchi e frecce.</p>
+    <p>Tanti argomenti, messi insieme, formano un ragionamento: una specie di struttura ad albero per sostenere una singola tesi.</p>
+
+      <h2>11</h2>
+    <div id="11">
+      <p class="duplicate">
+        <i style="color: rgba(10,60,123,0.7)" class="fa fa-square-o"></i>
+        <i style="color: rgba(10,123,10,0.7)" class="fa fa-square-o"></i>
+        <i class="fa fa-arrow-right"></i>
+        <i style="color: rgba(20,133,133,0.7)" class="fa fa-square"></i></p>
+    </div>
+    <p>I singoli elementi (le affermazioni e le implicazioni) e i singoli pezzi del ragionamento (gli argomenti) devono poter essere riutilizzabili, da persone diverse in ragionamenti diversi.</p>
+
+      <h2>12</h2>
+    <div id="12">
+      <p><i class="fa fa-wikipedia-w"></i> <i class="fa fa-plus"></i> <i class="fa fa-facebook"></i></p>
+    </div>
+    <p>Spiegami deve essere simile a Wikipedia, ma plurale: per ogni tesi possono esserci strutture argomentative diverse. Deve essere un network come Facebook, ma meno dispersivo perché basato sui contenuti e sui ragionamenti, e non sulle emozioni e sui battibecchi.</p>
+
+      <h2>13</h2>
+    <div id="13">
+      <p style="color: rgba(255,255,10,0.7);"><i class="fa fa-flash"></i></p>
+    </div>
+    <p>Spiegami deve essere immediato, ma profondo quanto necessario. Devo poterlo usare semplicemente, approfondendo di volta in volta quello che mi interessa.</p>
+
+      <h2>14</h2>
+    <div id="14">
+      <p style="color: rgba(255,255,10,0.7);"><i class="fa fa-lightbulb-o"></i></p>
+    </div>
+    <p>Spiegami deve essere stimolante. Man mano che segno le affermazioni che incontro a seconda come giuste o sbagliate (per me), deve poter scoprire ragionamenti che non aveva considerato a cui le mie idee portano.</p>
+
+      <h2>15</h2>
+    <div id="15">
+      <p style="color: rgba(255,255,10,0.7);"><i class="fa fa-map-signs"></i></p>
+    </div>
+    <p>Deve essere provocante. E anche dall'altra parte, posso incontrare ragionamenti che mostrano apparenti contraddizioni nelle mie idee: allora, o quel ragionamento è sbagliato, oppure le mie idee hanno delle contraddizioni, e in ogni caso posso imparare qualcosa!</p>
+
+      <h2>16</h2>
+    <div id="16">
+      <p class="wikislide" style="font-size: 3vh; padding: 0;"></p>
+      <p style="background-color: rgba(0,0,0,0);"><i class="fa fa-wikipedia-w"></i></p>
+    </div>
+    <p>Io lo sto immaginando come social network, in tal caso non è detto che tutti debbano usarlo per scriverci: e un esempio su tutti è Wikipedia, che ha molti più visitatori che contribuitori.</p>
+
+      <h2>17</h2>
+    <div id="17">
+      <p><i class="fa fa-graduation-cap"></i>
+        <i class="fa fa-legal"></i>
+        <i class="fa fa-university"></i>
+        <i class="fa fa-book"></i>
+        <i class="fa fa-database"></i></p>
+    </div>
+    <p>D'altra parte, magari la dimensione per Spiegami è l'uso didattico, o nei gruppi di dibattito, o in ambito accademico, o nella formazione politica, o nell'analisi dei dati</p>
+
+      <h2>18</h2>
+    <div id="18">
+      <p style="color: rgba(123,10,123,0.7)"><i class="fa fa-question-circle"></i></p>
+    </div>
+    <p>Obiezione: è difficile, è troppo complesso da fare, se non l'ha ancora fatto nessuno, significa che non è possibile. E poi come sostenerlo economicamente? Come coinvolgere le persone? Come strutturarlo esattamente? </p>
+
+      <h2>19</h2>
+    <div id="19">
+      <p><i class="battery fa fa-battery-0"></i></p>
+    </div>
+    <p>Non lo vedo bene, ma lo intravvedo, e ogni volta che sorge un nuovo problema o una nuova domanda a cui non ho la risposta, non penso che sia un ostacolo insuperabile, ma solo una cosa in più che terremo in considerazione per rendere questa piattaforma uno strumento di successo</p>
+
+      <h2>20</h2>
+    <div id="20">
+    </div>
+    <p>La strada è in salita ma il potenziale è enorme, il potenziale è progettare qualcosa che cambierà per sempre il nostro modo di ragionare.</p>
+
+      <div id="tnx">
+      <p>Grazie!</p>
+    </div>
+
+    <h2>QeA</h2>
+    <p>
+      <strong>What problem does this solve?</strong><br>
+      idk? :S
+    </p>
+    <p>
+      <strong>Whose problem is this? Is it important to them? Is there evidence they’d pay to have it solved?</strong><br>
+      idk? :S
+    </p>
+    <p>
+      <strong>What are the toughest challenges implied by the idea? How will you solve each one?</strong><br>
+      idk? :S
+    </p>
+    <p>
+      <strong>Do you have a prototype, sample, or demonstration (aka proof of concept)? Of the remaining work, what is hardest to do?</strong><br>
+      idk? :S
+    </p>
+    <p>
+      <strong>Why are you the right person to solve this?</strong><br>
+      idk? :S
+    </p>
+    <p>
+      <strong>Why should our organization give you money/support/time to work on this?</strong><br>
+      idk? :S
+    </p>
+  </div>
+
+
+  <div id="preload" style="display:none;"></div>
+
+
+
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/ignite.js"></script>
+
+</body>
+
+</html>

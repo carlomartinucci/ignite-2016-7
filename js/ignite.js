@@ -1,9 +1,50 @@
+var pause = false;
+var startSlide, startPercentage;
+var odometerNumber = 15
+function startIncrementNumber() {
+  setTimeout(function(){
+    odometerNumber += 1
+    $(".number-to-change").html(dec2bin(odometerNumber));
+    startIncrementNumber();
+  }, 1000);
+}
+
+function dec2bin(dec) {
+  return (dec >>> 0).toString(2);
+}
+
+window.odometerOptions = {
+  // auto: false, // Don't automatically initialize everything with class 'odometer'
+  // selector: '.my-numbers', // Change the selector used to automatically find things to be animated
+  // format: '(,ddd).dd', // Change how digit groups are formatted, and how many digits are shown after the decimal point
+  duration: 1000, // Change how long the javascript expects the CSS animation to take
+  theme: 'slot-machine' // Specify the theme (if you have more than one theme css file on the page)
+  // animation: 'count' // Count is a simpler animation method which just increments the value,
+                     // use it when you're looking for something more subtle.
+};
+
 $(function () {
+  startIncrementNumber();
   $('.progress').hide();
-  $("#videodiv").hide();
+  // $("#videodiv").hide();
   setBackground(1, "#preload");
-  var vid = document.getElementById("videomp4");
-  vid.currentTime = 9 ;
+  // var vid = document.getElementById("videomp4");
+  // vid.currentTime = 9 ;
+  // Enter: 13
+  // SpaceBar: 32
+  // Left: 37
+  // Up: 38
+  // Right: 39
+  // Down: 40
+  $('body').keydown(function(e) {
+    if (e.which == 32) {
+      pause = !pause;
+      if (pause) {
+        progressBar(15000, 200, startSlide, startPercentage);
+      }
+    }
+    console.log( e.which );
+  });
 });
 
 function setBackground(slideNumber, of) {
@@ -12,6 +53,7 @@ function setBackground(slideNumber, of) {
 }
 
 function startIgnite() {
+  pause = false;
   $('.progress').show();
   $('#actual-slide').html("" + 1 );
   setBackground(1);
@@ -20,15 +62,15 @@ function startIgnite() {
   $("#change-content").html(content);
   progressBar(15000, 200);
   $('#content').css("cursor", "none");
-  var vid = document.getElementById("videomp4");
-  vid.play();
-  $("#videodiv").show();
-  $('#content').css("width", "50vw");
-  $('#content').css("height", "50vh");
-  $('#content').css("bottom", "1vh");
-  $('#content').css("right", "1vh");
-  $('#content p').css("font-size", "10vh");
-  $('#content p').css("padding", "0 3vh");
+  // var vid = document.getElementById("videomp4");
+  // vid.play();
+  // $("#videodiv").show();
+  // $('#content').css("width", "50vw");
+  // $('#content').css("height", "50vh");
+  // $('#content').css("bottom", "1vh");
+  // $('#content').css("right", "1vh");
+  // $('#content p').css("font-size", "10vh");
+  // $('#content p').css("padding", "0 3vh");
 
   // $("#videodiv").fadeIn();
 }
@@ -52,11 +94,13 @@ function endIgnite() {
   }, 2000)
 }
 
-function progressBar(T, t) {
-  var actualSlide = 1;
-  var percentage = 0;
+function progressBar(T, t, startSlide, startPercentage) {
+  if (startSlide == null) {startSlide = 1;}
+  var actualSlide = startSlide;
+  if (startPercentage == null) {startPercentage = 0;}
+  var percentage = startPercentage;
   var color = 0;
-  var delta_percentage = t/T;
+  delta_percentage = t/T;
   function advanceProgressBar(dp){
     setTimeout(function(){
       percentage += dp;
@@ -75,10 +119,13 @@ function progressBar(T, t) {
         animateSlide(actualSlide);
         percentage = 0;
         color += 50505;
-        console.log(color)
         $('.progress-bar').css("background-color", setColor(actualSlide));
       }
-      if (actualSlide <= 20 ) {
+      if (pause) {
+        startSlide = actualSlide;
+        startPercentage = percentage;
+      }
+      else if (actualSlide <= 20 ) {
         advanceProgressBar(dp);
       }
       else {

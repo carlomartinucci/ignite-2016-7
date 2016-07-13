@@ -1,12 +1,28 @@
 var pause = false;
 var startSlide, startPercentage;
-var odometerNumber = 15
-function startIncrementNumber() {
+var binNumber = 32
+var decNumber = 100
+function startIncrementBinNumber() {
   setTimeout(function(){
-    odometerNumber += 1
-    $(".number-to-change").html(dec2bin(odometerNumber));
-    startIncrementNumber();
-  }, 1000);
+    if (binNumber < 63) {
+      binNumber += 1
+      $(".js-bin").html(dec2bin(binNumber));
+      startIncrementBinNumber();
+    }
+  },1000);
+}
+function startIncrementDecNumber() {
+  setTimeout(function(){
+    if (decNumber < 131) {
+      decNumber += 1
+      $(".js-dec").html(decNumber);
+      startIncrementDecNumber();
+    }
+  },1000);
+}
+function startIncrementNumbers() {
+  startIncrementBinNumber();
+  startIncrementDecNumber();
 }
 
 function dec2bin(dec) {
@@ -16,15 +32,15 @@ function dec2bin(dec) {
 window.odometerOptions = {
   // auto: false, // Don't automatically initialize everything with class 'odometer'
   // selector: '.my-numbers', // Change the selector used to automatically find things to be animated
-  // format: '(,ddd).dd', // Change how digit groups are formatted, and how many digits are shown after the decimal point
+  format: 'd', // Change how digit groups are formatted, and how many digits are shown after the decimal point
   duration: 1000, // Change how long the javascript expects the CSS animation to take
-  theme: 'slot-machine' // Specify the theme (if you have more than one theme css file on the page)
+  theme: 'train-station' // Specify the theme (if you have more than one theme css file on the page)
   // animation: 'count' // Count is a simpler animation method which just increments the value,
                      // use it when you're looking for something more subtle.
 };
 
 $(function () {
-  startIncrementNumber();
+  startIncrementNumbers();
   $('.progress').hide();
   // $("#videodiv").hide();
   setBackground(1, "#preload");

@@ -24,7 +24,7 @@ body {
   width: 30vw;
 }
 
-#content p, .number-to-change {
+#content p {
   font-size: 5vh;
   position: absolute;
   top: 50%;
@@ -35,6 +35,10 @@ body {
   padding: 0 5vh;
   background-color: rgba(255,255,255,0.3);
   text-align: center;
+}
+
+.number-to-change {
+  font-size: 5vh;
 }
 
 #content #start {
@@ -108,4 +112,12 @@ body {
     -ms-transition-duration: 1s !important;
     -o-transition-duration: 1s !important;
     transition-duration: 1s !important
+}
+
+.odometer-inside .odometer-digit:first-child {
+  display: none !important;
+  visibility: hidden !important;
+}
+.odometer-inside .odometer-digit:nth-child(2) {
+  margin-left: 0px !important;
 }

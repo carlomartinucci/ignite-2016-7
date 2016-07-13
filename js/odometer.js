@@ -314,6 +314,18 @@
       this.el.className = newClasses.join(' ');
       this.ribbons = {};
       this.formatDigits(value);
+
+      // custom code
+      //if (5 > this.digits.length)
+      //  {
+      //    var initialLength;
+      //    initialLength = this.digits.length;
+      //    for (_j = 0; _j < 5 - initialLength; _j++)
+      //    {
+      //        this.addDigit(0,true);
+      //    }
+      //  }
+
       return this.startWatchingMutations();
     };
 

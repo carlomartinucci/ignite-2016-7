@@ -25,6 +25,7 @@
   <link href="css/odometer-theme-slot-machine.css" rel="stylesheet">
   <link href="css/odometer-theme-train-station.css" rel="stylesheet">
   <link href="css/ignite_sass.css" rel="stylesheet">
+  <link href="css/ignite_temp.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -38,6 +39,9 @@
 
 <body>
   <div class="c-actual-slide">
+    <div class="c-actual-slide__content js-actual-content">
+
+    </div>
 
     <div class="c-author-name js-author-name">Carlo Martinucci</div>
     <div class="c-slide-number js-slide-number">
@@ -48,162 +52,164 @@
   </div>
   <div class="c-slides is-hidden">
     <div class="c-slides__0">
-      <div class="js-slide-content">
+      <div class="js-slide-content c-slide-content">
       </div>
-      <div class="c-slides__0__description">
+      <div class="js-slide-description c-slide-description is-hidden">
       </div>
     </div>
     <div class="c-slides__1">
-      <div class="js-slide-content">
+      <div class="js-slide-content c-slide-content">
       </div>
-      <div class="c-slides__1__description">
+      <div class="js-slide-description c-slide-description is-hidden">
         Quanto contate con una mano? Da 0 a 5? Vi insegno a contare fino a 31
 
       </div>
     </div>
     <div class="c-slides__2">
-      <div class="js-slide-content">
+      <div class="js-slide-content c-slide-content">
+        <div id="dec-to-31">100</div>
+        <div class="u-bin-font" id="bin-to-31"></div>
       </div>
-      <div class="c-slides__2__description">
+      <div class="js-slide-description c-slide-description is-hidden">
         Prima ve lo mostro, poi ve lo spiego: 0, 1, 2, 3, ..., 31! Capito? Ok, con ordine
 
       </div>
     </div>
     <div class="c-slides__3">
-      <div class="js-slide-content">
+      <div class="js-slide-content c-slide-content">
       </div>
-      <div class="c-slides__3__description">
+      <div class="js-slide-description c-slide-description is-hidden">
         Il nostro sistema numerico è posizionale: la stessa cifra, ad esempio 4, ha un valore diverso a seconda di dove si trova
 
       </div>
     </div>
     <div class="c-slides__4">
-      <div class="js-slide-content">
+      <div class="js-slide-content c-slide-content">
       </div>
-      <div class="c-slides__4__description">
+      <div class="js-slide-description c-slide-description is-hidden">
         Ad esempio, 44. I due 4 non valgono uguale, quello a destra sono le unità, e quel 4 vale proprio 4. Quello a sinistra invece è delle decine, quindi vale 40.
 
       </div>
     </div>
     <div class="c-slides__5">
-      <div class="js-slide-content">
+      <div class="js-slide-content c-slide-content">
       </div>
-      <div class="c-slides__5__description">
+      <div class="js-slide-description c-slide-description is-hidden">
         44 si può scrivere 40 + 4. E il 40 sono 4 decine, cioè 4*10. Quindi, 44 lo posso scrivere 44 = 4*10 + 4*1
 
       </div>
     </div>
     <div class="c-slides__6">
-      <div class="js-slide-content">
+      <div class="js-slide-content c-slide-content">
       </div>
-      <div class="c-slides__6__description">
+      <div class="js-slide-description c-slide-description is-hidden">
         Vi ricordate quando alle elementari la maestra vi faceva scrivere i numeri con colori diversi per le unità, le decine, le centinaia..? Ecco, come bonus ora capiremo anche a che cosa serve!
 
       </div>
     </div>
     <div class="c-slides__7">
-      <div class="js-slide-content">
+      <div class="js-slide-content c-slide-content">
       </div>
-      <div class="c-slides__7__description">
+      <div class="js-slide-description c-slide-description is-hidden">
         KarateKid, metto la cera, tolgo la cera
 
       </div>
     </div>
     <div class="c-slides__8">
-      <div class="js-slide-content">
+      <div class="js-slide-content c-slide-content">
       </div>
-      <div class="c-slides__8__description">
+      <div class="js-slide-description c-slide-description is-hidden">
         Tornando a noi, come contiamo? Abbiamo 10 simboli da usare, le cifre, da 0 a 9, e quando arriviamo a 9 che succede?
 
       </div>
     </div>
     <div class="c-slides__9">
-      <div class="js-slide-content">
+      <div class="js-slide-content c-slide-content">
       </div>
-      <div class="c-slides__9__description">
+      <div class="js-slide-description c-slide-description is-hidden">
         Succede come in un contachilometri: il 9 torna a 0 e aggiugni 1 alle decine: 10. 19 -> 20. 99 -> 100. 
 
       </div>
     </div>
     <div class="c-slides__10">
-      <div class="js-slide-content">
+      <div class="js-slide-content c-slide-content">
       </div>
-      <div class="c-slides__10__description">
+      <div class="js-slide-description c-slide-description is-hidden">
         A questo punto ci chiediamo, che succede se invece che 10 simboli (le cifre da 0 a 9), ne usiamo solo 2 (0 e 1)?
 
       </div>
     </div>
     <div class="c-slides__11">
-      <div class="js-slide-content">
+      <div class="js-slide-content c-slide-content">
       </div>
-      <div class="c-slides__11__description">
+      <div class="js-slide-description c-slide-description is-hidden">
         0, 1, 10, 11, 100, 101, 110, 111, 1000
 
       </div>
     </div>
     <div class="c-slides__12">
-      <div class="js-slide-content">
+      <div class="js-slide-content c-slide-content">
       </div>
-      <div class="c-slides__12__description">
+      <div class="js-slide-description c-slide-description is-hidden">
         Adesso con le dita: ogni dita è uguale all'altra, vale 0 se è giù, 1 se è su. Ma sono in posizioni diverse, come le cifre in fila
 
       </div>
     </div>
     <div class="c-slides__13">
-      <div class="js-slide-content">
+      <div class="js-slide-content c-slide-content">
       </div>
-      <div class="c-slides__13__description">
+      <div class="js-slide-description c-slide-description is-hidden">
         0, 1, (2) 10, (3) 11, (4) 100, (5) 101, (6) 110, (7) 111, (8) 1000
 
       </div>
     </div>
     <div class="c-slides__14">
-      <div class="js-slide-content">
+      <div class="js-slide-content c-slide-content">
       </div>
-      <div class="c-slides__14__description">
+      <div class="js-slide-description c-slide-description is-hidden">
 
       </div>
     </div>
     <div class="c-slides__15">
-      <div class="js-slide-content">
+      <div class="js-slide-content c-slide-content">
       </div>
-      <div class="c-slides__15__description">
+      <div class="js-slide-description c-slide-description is-hidden">
       </div>
     </div>
     <div class="c-slides__16">
-      <div class="js-slide-content">
+      <div class="js-slide-content c-slide-content">
       </div>
-      <div class="c-slides__16__description">
+      <div class="js-slide-description c-slide-description is-hidden">
       </div>
     </div>
     <div class="c-slides__17">
-      <div class="js-slide-content">
+      <div class="js-slide-content c-slide-content">
       </div>
-      <div class="c-slides__17__description">
+      <div class="js-slide-description c-slide-description is-hidden">
       </div>
     </div>
     <div class="c-slides__18">
-      <div class="js-slide-content">
+      <div class="js-slide-content c-slide-content">
       </div>
-      <div class="c-slides__18__description">
+      <div class="js-slide-description c-slide-description is-hidden">
       </div>
     </div>
     <div class="c-slides__19">
-      <div class="js-slide-content">
+      <div class="js-slide-content c-slide-content">
       </div>
-      <div class="c-slides__19__description">
+      <div class="js-slide-description c-slide-description is-hidden">
       </div>
     </div>
     <div class="c-slides__20">
-      <div class="js-slide-content">
+      <div class="js-slide-content c-slide-content">
       </div>
-      <div class="c-slides__20__description">
+      <div class="js-slide-description c-slide-description is-hidden">
       </div>
     </div>
     <div class="c-slides__21">
-      <div class="js-slide-content">
+      <div class="js-slide-content c-slide-content">
       </div>
-      <div class="c-slides__21__description">
+      <div class="js-slide-description c-slide-description is-hidden">
         Grazie!
       </div>
     </div>

@@ -28,35 +28,62 @@ $(function () {
   function countSeconds() {
     if (pause) {return}
     seconds = ((seconds - 99) % 15) +100;
-    updateSlideNumber();
+    if (seconds == 100) {
+      updateSlideNumber(1);
+    }
     $(".js-seconds").html(seconds);
-    setTimeout(countSeconds, 1000);
+    if (slideNumber < 121) {
+      setTimeout(countSeconds, 1000);
+    } else if (slideNumber == 121) {
+      return
+    }
   }
 
-  function updateSlideNumber() {
-    if (seconds == 100) {
-      slideNumber += 1;
-      $(".js-slide").html(slideNumber);
-    }
+  function updateSlideNumber(delta) {
+    slideNumber += delta;
+    $(".js-slide").html(slideNumber);
+    setSlide(slideNumber);
   }
 
   function dec2bin(dec) {
     return (dec >>> 0).toString(2);
   }
 
+  function setSlide(number) {
+    var content = $(".c-slides__"+(number-100)).html();
+    $(".js-actual-content").html(content);
+  }
+
   setBackground(1, "#preload");
   // var vid = document.getElementById("videomp4");
   // vid.currentTime = 9 ;
-  // Enter: 13
-  // SpaceBar: 32
-  // Left: 37
   // Up: 38
-  // Right: 39
   // Down: 40
   $('body').keydown(function(e) {
+  // SpaceBar: 32
     if (e.which == 32) {
       pause = !pause;
       countSeconds();
+    }
+  // Enter: 13
+    if (e.which == 13) {
+      // demoMode = true;
+      $(".js-slide-description").toggleClass("is-hidden");
+      $(".js-slide-content").toggleClass("is-hidden");
+    }
+  // Left: 37
+    if (e.which == 37) {
+      // go back;
+      seconds = 100;
+      if (slideNumber > 101) {
+        updateSlideNumber(-1);
+      }
+    }
+  // Right: 39
+    if (e.which == 39) {
+      // go forward;
+      seconds = 100;
+      updateSlideNumber(1);
     }
     console.log( e.which );
   });

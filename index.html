@@ -17,7 +17,6 @@
   <link href="css/bootstrap.css" rel="stylesheet">
 
   <!-- Custom CSS -->
-  <link href="css/ignite.css" rel="stylesheet">
   <link href="css/odometer-theme-default.css" rel="stylesheet">
   <link href="css/odometer-theme-car.css" rel="stylesheet">
   <link href="css/odometer-theme-digital.css" rel="stylesheet">
@@ -25,6 +24,7 @@
   <link href="css/odometer-theme-plaza.css" rel="stylesheet">
   <link href="css/odometer-theme-slot-machine.css" rel="stylesheet">
   <link href="css/odometer-theme-train-station.css" rel="stylesheet">
+  <link href="css/ignite_sass.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -37,29 +37,178 @@
 </head>
 
 <body>
-  <div id="content">
-    <div id="change-content">
+  <div class="c-actual-slide">
 
-      <p id="start" onClick="startIgnite()">
-        <i class="fa fa-fire" aria-hidden="true"></i>
-      </p>
-      <div class="odometer number-to-change js-bin">100000</div>
-      <div class="odometer number-to-change js-dec">100</div>
-
+    <div class="c-author-name js-author-name">Carlo Martinucci</div>
+    <div class="c-slide-number js-slide-number">
+      <div class="c-slide-number__slide js-slide"></div>
+      <div style="float: right;">&nbsp;</div>
+      <div class="c-slide-number__seconds js-seconds"></div>
     </div>
-    <div id="progressdiv">
-      <div class="progress">
-        <div class="progress-bar" role="progressbar" style="width: 0%; background-color:#333;"></div>
+  </div>
+  <div class="c-slides is-hidden">
+    <div class="c-slides__0">
+      <div class="js-slide-content">
+      </div>
+      <div class="c-slides__0__description">
       </div>
     </div>
+    <div class="c-slides__1">
+      <div class="js-slide-content">
+      </div>
+      <div class="c-slides__1__description">
+        Quanto contate con una mano? Da 0 a 5? Vi insegno a contare fino a 31
 
-    <div id="actual-slide">
-      <span style="padding: 0 1vh">Carlo Martinucci</span>
+      </div>
     </div>
+    <div class="c-slides__2">
+      <div class="js-slide-content">
+      </div>
+      <div class="c-slides__2__description">
+        Prima ve lo mostro, poi ve lo spiego: 0, 1, 2, 3, ..., 31! Capito? Ok, con ordine
 
+      </div>
+    </div>
+    <div class="c-slides__3">
+      <div class="js-slide-content">
+      </div>
+      <div class="c-slides__3__description">
+        Il nostro sistema numerico è posizionale: la stessa cifra, ad esempio 4, ha un valore diverso a seconda di dove si trova
+
+      </div>
+    </div>
+    <div class="c-slides__4">
+      <div class="js-slide-content">
+      </div>
+      <div class="c-slides__4__description">
+        Ad esempio, 44. I due 4 non valgono uguale, quello a destra sono le unità, e quel 4 vale proprio 4. Quello a sinistra invece è delle decine, quindi vale 40.
+
+      </div>
+    </div>
+    <div class="c-slides__5">
+      <div class="js-slide-content">
+      </div>
+      <div class="c-slides__5__description">
+        44 si può scrivere 40 + 4. E il 40 sono 4 decine, cioè 4*10. Quindi, 44 lo posso scrivere 44 = 4*10 + 4*1
+
+      </div>
+    </div>
+    <div class="c-slides__6">
+      <div class="js-slide-content">
+      </div>
+      <div class="c-slides__6__description">
+        Vi ricordate quando alle elementari la maestra vi faceva scrivere i numeri con colori diversi per le unità, le decine, le centinaia..? Ecco, come bonus ora capiremo anche a che cosa serve!
+
+      </div>
+    </div>
+    <div class="c-slides__7">
+      <div class="js-slide-content">
+      </div>
+      <div class="c-slides__7__description">
+        KarateKid, metto la cera, tolgo la cera
+
+      </div>
+    </div>
+    <div class="c-slides__8">
+      <div class="js-slide-content">
+      </div>
+      <div class="c-slides__8__description">
+        Tornando a noi, come contiamo? Abbiamo 10 simboli da usare, le cifre, da 0 a 9, e quando arriviamo a 9 che succede?
+
+      </div>
+    </div>
+    <div class="c-slides__9">
+      <div class="js-slide-content">
+      </div>
+      <div class="c-slides__9__description">
+        Succede come in un contachilometri: il 9 torna a 0 e aggiugni 1 alle decine: 10. 19 -> 20. 99 -> 100. 
+
+      </div>
+    </div>
+    <div class="c-slides__10">
+      <div class="js-slide-content">
+      </div>
+      <div class="c-slides__10__description">
+        A questo punto ci chiediamo, che succede se invece che 10 simboli (le cifre da 0 a 9), ne usiamo solo 2 (0 e 1)?
+
+      </div>
+    </div>
+    <div class="c-slides__11">
+      <div class="js-slide-content">
+      </div>
+      <div class="c-slides__11__description">
+        0, 1, 10, 11, 100, 101, 110, 111, 1000
+
+      </div>
+    </div>
+    <div class="c-slides__12">
+      <div class="js-slide-content">
+      </div>
+      <div class="c-slides__12__description">
+        Adesso con le dita: ogni dita è uguale all'altra, vale 0 se è giù, 1 se è su. Ma sono in posizioni diverse, come le cifre in fila
+
+      </div>
+    </div>
+    <div class="c-slides__13">
+      <div class="js-slide-content">
+      </div>
+      <div class="c-slides__13__description">
+        0, 1, (2) 10, (3) 11, (4) 100, (5) 101, (6) 110, (7) 111, (8) 1000
+
+      </div>
+    </div>
+    <div class="c-slides__14">
+      <div class="js-slide-content">
+      </div>
+      <div class="c-slides__14__description">
+
+      </div>
+    </div>
+    <div class="c-slides__15">
+      <div class="js-slide-content">
+      </div>
+      <div class="c-slides__15__description">
+      </div>
+    </div>
+    <div class="c-slides__16">
+      <div class="js-slide-content">
+      </div>
+      <div class="c-slides__16__description">
+      </div>
+    </div>
+    <div class="c-slides__17">
+      <div class="js-slide-content">
+      </div>
+      <div class="c-slides__17__description">
+      </div>
+    </div>
+    <div class="c-slides__18">
+      <div class="js-slide-content">
+      </div>
+      <div class="c-slides__18__description">
+      </div>
+    </div>
+    <div class="c-slides__19">
+      <div class="js-slide-content">
+      </div>
+      <div class="c-slides__19__description">
+      </div>
+    </div>
+    <div class="c-slides__20">
+      <div class="js-slide-content">
+      </div>
+      <div class="c-slides__20__description">
+      </div>
+    </div>
+    <div class="c-slides__21">
+      <div class="js-slide-content">
+      </div>
+      <div class="c-slides__21__description">
+        Grazie!
+      </div>
+    </div>
   </div>
-
-  <div style="display:none;">
+  <div class="c-descriptions is-hidden">
     <h1>Cinque secondi</h1>
     <p>Un metodo per contare fino a 31 con una mano sola.</p>
 
@@ -67,136 +216,8 @@
 
     <h1>Trecento secondi</h1>
     <p>Come si fa a contare? Il nostro sistema numerico è un sistema posizionale, cioè i simboli che usiamo (le cifre) hanno un valore diverso a seconda di dove si trovano. Ad esempio, se scrivo 44, i due 4 hanno valori diversi: quello più a destra vale 4, quello a sinistra vale 40. Quando alle elementari ci hanno insegnato a scrivere le unità in blu, le decine in rosso, le centinaia in verde, forse era noioso e sicuramente non ci siamo divertiti (almeno, io mi ricordo che non era affatto divertente), però ci ha messo bene in testa questo concetto: che lo stesso simbolo ha un valore diverso a seconda di dove si trova. Perché questo è importante? Torniamo alla prima domanda: come contiamo? Abbiamo a disposizione dieci cifre, dallo 0 al 9, lo zero non vale niente, poi 1, 2, 3, e avanti fino ad arrivare a 9, e poi? E poi le cifre sono finite, quindi torno a 0 ma aggiungo 1 nella posizione delle decine: 10. E avanti 11, 12, ... 19, e poi? Poi il 9 torna a 0 e l'1 diventa un 2: 20. Come un contachilometri, quando una rotella ha finito il suo giro torna a 0 e fa fare uno scatto alla rotella alla sua sinitra, in cui ogni cifra vale dieci volte tanto. Ora, il nostro sistema posizionale è decimale, cioè con dieci cifre, probabilmente perché abbiamo dieci dita nelle due mani. Ma che cosa succede se proviamo a fare lo stesso ragionamento usando una quantità diversa di simboli? Ad esempio, invece di arrivare da 0 a 9, usiamo solo due cifre diverse, lo 0 e l'1? Proviamo a contare: 0, 1, abbiamo già finito le cifre disponibili, è come se fossimo a 9, quindi torno a 0 e aggiungo 1 nella posizione a sinistra: 10. Poi 11, e poi è come se fossimo a 99, il numero dopo l'11 è 100. Adesso, proviamo a contare in questo modo, ma con le dita. 1 pollice, 2 indice, 3 pollice + indice, 4 medio, 5 pollice + medio, 6 indice + medio, 7 pollice + indice + medio, eccetera. Le dita sono uguali fra di loro, possono dire solo 0 se sono giù o 1 se sono su. Ma il fatto che siano in posizioni diverse da' un valore diverso a ciascuna, proprio come le unità sono diverse dalle decine e dalle centinaia. Nel sistema decimale, cioè con 10 simboli da 0 a 9, il valore a seconda della posizione è una potenza di 10: 1, 10, 100, 1000. Nel sistema binario, cioè con 2 simboli 0 e 1, il valore è una potenza di 2: 1, 2, 4, 8, 16. Il pollice vale 1, l'indice 2, il medio 4, l'anulare 8, il mignolo 16. Per fare un numero, sommo tutti i valori delle dita che sono su, proprio come quando ho un numero decimale sommo le unità con le decine con le centinaia. Quindi con cinque dita, al massimo posso fare 1+2+4+8+16 cioè 31, quindi da 0 a 31 sono 32 diversi numeri, cioè 2^5, che posso rappresentare. Proprio come con cinque cifre nel sistema decimale posso rappresentare i numeri da 0 a 99.999 che sono 100.000, cioè 10^5.</p>
-
-      <h2>1</h2>
-    <div id="1">
-      <p>Quanto contate con una mano? Da 0 a 5? Vi insegno a contare fino a 31</p>
-    </div>
-    <p></p>
-
-      <h2>2</h2>
-    <div id="2">
-      <p>Prima ve lo mostro, poi ve lo spiego: 0, 1, 2, 3, ..., 31! Capito? Ok, con ordine</p>
-    </div>
-    <p></p>
-
-      <h2>3</h2>
-    <div id="3">
-      <p>Il nostro sistema numerico è posizionale: la stessa cifra, ad esempio 4, ha un valore diverso a seconda di dove si trova</p>
-    </div>
-    <p></p>
-
-      <h2>4</h2>
-    <div id="4">
-      <p>Ad esempio, 44. I due 4 non valgono uguale, quello a destra sono le unità, e quel 4 vale proprio 4. Quello a sinistra invece è delle decine, quindi vale 40.</p>
-    </div>
-    <p></p>
-
-      <h2>5</h2>
-    <div id="5">
-      <p>44 si può scrivere 40 + 4. E il 40 sono 4 decine, cioè 4*10. Quindi, 44 lo posso scrivere 44 = 4*10 + 4*1</p>
-    </div>
-    <p></p>
-
-      <h2>6</h2>
-    <div id="6">
-      <p>Vi ricordate quando alle elementari la maestra vi faceva scrivere i numeri con colori diversi per le unità, le decine, le centinaia..? Ecco, come bonus ora capiremo anche a che cosa serve!</p>
-    </div>
-    <p></p>
-
-      <h2>7</h2>
-    <div id="7">
-      <p>KarateKid, metto la cera, tolgo la cera</p>
-    </div>
-    <p></p>
-
-      <h2>8</h2>
-    <div id="8">
-      <p>Tornando a noi, come contiamo? Abbiamo 10 simboli da usare, le cifre, da 0 a 9, e quando arriviamo a 9 che succede?</p>
-    </div>
-    <p></p>
-
-      <h2>9</h2>
-    <div id="9">
-      <p>Succede come in un contachilometri: il 9 torna a 0 e aggiugni 1 alle decine: 10. 19 -> 20. 99 -> 100. </p>
-    </div>
-    <p></p>
-
-      <h2>10</h2>
-    <div id="10">
-      <p>A questo punto ci chiediamo, che succede se invece che 10 simboli (le cifre da 0 a 9), ne usiamo solo 2 (0 e 1)?</p>
-    </div>
-    <p></p>
-
-      <h2>11</h2>
-    <div id="11">
-      <p>0, 1, 10, 11, 100, 101, 110, 111, 1000</p>
-    </div>
-    <p></p>
-
-      <h2>12</h2>
-    <div id="12">
-      <p>Adesso con le dita: ogni dita è uguale all'altra, vale 0 se è giù, 1 se è su. Ma sono in posizioni diverse, come le cifre in fila</p>
-    </div>
-    <p></p>
-
-      <h2>13</h2>
-    <div id="13">
-      <p>0, 1, (2) 10, (3) 11, (4) 100, (5) 101, (6) 110, (7) 111, (8) 1000</p>
-    </div>
-    <p></p>
-
-      <h2>14</h2>
-    <div id="14">
-      <p></p>
-    </div>
-    <p></p>
-
-      <h2>15</h2>
-    <div id="15">
-      <p></p>
-    </div>
-    <p></p>
-
-      <h2>16</h2>
-    <div id="16">
-      <p></p>
-    </div>
-    <p></p>
-
-      <h2>17</h2>
-    <div id="17">
-      <p></p>
-    </div>
-    <p></p>
-
-      <h2>18</h2>
-    <div id="18">
-      <p></p>
-    </div>
-    <p></p>
-
-      <h2>19</h2>
-    <div id="19">
-      <p></p>
-    </div>
-    <p></p>
-
-      <h2>20</h2>
-    <div id="20">
-      <p></p>
-    </div>
-    <p></p>
-
-      <div id="tnx">
-      <p>Grazie!</p>
-    </div>
-
   </div>
-
-
-  <div id="preload" style="display:none;"></div>
-
+  <div id="preload" class="is-hidden"></div>
 
 
   <script src="js/jquery.js"></script>

@@ -1,36 +1,5 @@
-var pause = false;
-var startSlide, startPercentage;
-var binNumber = 32
-var decNumber = 100
-function startIncrementBinNumber() {
-  setTimeout(function(){
-    if (binNumber < 63) {
-      binNumber += 1
-      $(".js-bin").html(dec2bin(binNumber));
-      startIncrementBinNumber();
-    }
-  },1000);
-}
-function startIncrementDecNumber() {
-  setTimeout(function(){
-    if (decNumber < 131) {
-      decNumber += 1
-      $(".js-dec").html(decNumber);
-      startIncrementDecNumber();
-    }
-  },1000);
-}
-function startIncrementNumbers() {
-  startIncrementBinNumber();
-  startIncrementDecNumber();
-}
-
-function dec2bin(dec) {
-  return (dec >>> 0).toString(2);
-}
-
 window.odometerOptions = {
-  // auto: false, // Don't automatically initialize everything with class 'odometer'
+  auto: false, // Don't automatically initialize everything with class 'odometer'
   // selector: '.my-numbers', // Change the selector used to automatically find things to be animated
   format: 'd', // Change how digit groups are formatted, and how many digits are shown after the decimal point
   duration: 1000, // Change how long the javascript expects the CSS animation to take
@@ -40,9 +9,41 @@ window.odometerOptions = {
 };
 
 $(function () {
-  startIncrementNumbers();
-  $('.progress').hide();
-  // $("#videodiv").hide();
+  var pause = true;
+  var seconds = 100;
+  var slideNumber = 100;
+  var el = document.querySelector(".js-seconds");
+  var odSeconds = new Odometer({
+    el: el,
+    format: 'd',
+    value: 100
+  })
+  var el = document.querySelector(".js-slide");
+  var odSlide = new Odometer({
+    el: el,
+    format: 'd',
+    value: 100
+  })
+
+  function countSeconds() {
+    if (pause) {return}
+    seconds = ((seconds - 99) % 15) +100;
+    updateSlideNumber();
+    $(".js-seconds").html(seconds);
+    setTimeout(countSeconds, 1000);
+  }
+
+  function updateSlideNumber() {
+    if (seconds == 100) {
+      slideNumber += 1;
+      $(".js-slide").html(slideNumber);
+    }
+  }
+
+  function dec2bin(dec) {
+    return (dec >>> 0).toString(2);
+  }
+
   setBackground(1, "#preload");
   // var vid = document.getElementById("videomp4");
   // vid.currentTime = 9 ;
@@ -55,9 +56,7 @@ $(function () {
   $('body').keydown(function(e) {
     if (e.which == 32) {
       pause = !pause;
-      if (pause) {
-        progressBar(15000, 200, startSlide, startPercentage);
-      }
+      countSeconds();
     }
     console.log( e.which );
   });

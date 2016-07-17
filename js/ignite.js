@@ -7,11 +7,11 @@ window.odometerOptions = {
   // animation: 'count' // Count is a simpler animation method which just increments the value,
                      // use it when you're looking for something more subtle.
 };
+var slideNumber = 100;
 
 $(function () {
   var pause = true;
   var seconds = 100;
-  var slideNumber = 100;
   var el = document.querySelector(".js-seconds");
   var odSeconds = new Odometer({
     el: el,
@@ -34,26 +34,31 @@ $(function () {
     $(".js-seconds").html(seconds);
     if (slideNumber < 121) {
       setTimeout(countSeconds, 1000);
-    } else if (slideNumber == 121) {
+    } else if (slideNumber >= 121) {
       return
     }
   }
 
   function updateSlideNumber(delta) {
     slideNumber += delta;
-    $(".js-slide").html(slideNumber);
+    if (slideNumber == 121) {
+      $(".js-slide").html(100);
+    } else if (slideNumber > 121) {
+      slideNumber = 100;
+      $(".js-slide").html(slideNumber);
+    } else {
+      $(".js-slide").html(slideNumber);
+    }
     setSlide(slideNumber);
-  }
-
-  function dec2bin(dec) {
-    return (dec >>> 0).toString(2);
   }
 
   function setSlide(number) {
     var content = $(".c-slides__"+(number-100)).html();
     $(".js-actual-content").html(content);
+    animateSlide(number-100);
   }
 
+  setSlide(100);
   setBackground(1, "#preload");
   // var vid = document.getElementById("videomp4");
   // vid.currentTime = 9 ;
@@ -89,9 +94,13 @@ $(function () {
   });
 });
 
-function setBackground(slideNumber, of) {
+function dec2bin(dec) {
+  return (dec >>> 0).toString(2);
+}
+
+function setBackground(number, of) {
   if (of == null) {of = "#content";}
-  $(of).css("backgroundImage", "url(img/"+slideNumber+".jpg)")
+  $(of).css("backgroundImage", "url(img/"+number+".jpg)")
 }
 
 function startIgnite() {
@@ -178,9 +187,9 @@ function progressBar(T, t, startSlide, startPercentage) {
   advanceProgressBar(delta_percentage);
 }
 
-function setColor(slideNumber) {
+function setColor(n) {
   var color = ""
-  switch(slideNumber) {
+  switch(n) {
     case 2:
       color = "rgba(255,0,0,0.7)"
       break;
@@ -220,11 +229,37 @@ function setColor(slideNumber) {
   return color
 }
 
-function animateSlide(slideNumber) {
-  switch(slideNumber) {
+
+function animateSlide(n) {
+  var odoNumb = 0
+  switch(n) {
     case 1:
       break;
     case 2:
+      var el = document.querySelector(".js-dec-to-31");
+      var decTo32 = new Odometer({
+        el: el,
+        format: 'd',
+        value: 100
+      })
+      var el = document.querySelector(".js-bin-to-31");
+      var binTo32 = new Odometer({
+        el: el,
+        format: 'd',
+        value: 100000
+      })
+      function countBaseTo32() {
+        $(".js-dec-to-31").html(odoNumb+100);
+        $(".js-bin-to-31").html(dec2bin(odoNumb+32));
+        odoNumb += 1;
+        console.log(slideNumber)
+        if (slideNumber == 102 && odoNumb < 32) {
+          setTimeout(countBaseTo32, 400);
+        } else {
+          return
+        }
+      };
+      countBaseTo32()
       break;
     case 3:
       break;

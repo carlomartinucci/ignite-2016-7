@@ -45,9 +45,9 @@
 
     <div class="c-author-name js-author-name">Carlo Martinucci</div>
     <div class="c-slide-number js-slide-number">
-      <div class="c-slide-number__slide js-slide"></div>
+      <div class="c-slide-number__slide js-slide  u-font-DEC"></div>
       <div style="float: right;">&nbsp;</div>
-      <div class="c-slide-number__seconds js-seconds"></div>
+      <div class="c-slide-number__seconds js-seconds u-font-DEC"></div>
     </div>
   </div>
   <div class="c-slides is-hidden">
@@ -55,155 +55,157 @@
       <div class="js-slide-content c-slide-content">
       </div>
       <div class="js-slide-description c-slide-description is-hidden">
+        Titolo: from zero to hero
+        Impariamo a contare
+Sai contare fino a 31
+Contiamo
+How to: count
+Contare con le dita
+Come si conta
       </div>
     </div>
     <div class="c-slides__1">
       <div class="js-slide-content c-slide-content">
       </div>
       <div class="js-slide-description c-slide-description is-hidden">
-        Quanto contate con una mano? Da 0 a 5? Vi insegno a contare fino a 31
+        Quanto contate con una mano? Da 0 a 5? Per arrivare a 10 bisogna usarla due volte, e poi non sai se eri a 5 o a 10...
 
       </div>
     </div>
     <div class="c-slides__2">
       <div class="js-slide-content c-slide-content">
-        <div id="dec-to-31">100</div>
-        <div class="u-bin-font" id="bin-to-31"></div>
+        <div class="u-font-DEC js-dec-to-31" id="dec-to-31">100</div><br>
+        <div class="u-font-FIN js-bin-to-31" id="bin-to-31">100000</div>
       </div>
       <div class="js-slide-description c-slide-description is-hidden">
-        Prima ve lo mostro, poi ve lo spiego: 0, 1, 2, 3, ..., 31! Capito? Ok, con ordine
-
+        Io uso un metodo che voglio raccontarvi, per contare fino a 31. Prima ve lo mostro, poi ve lo spiego
       </div>
     </div>
     <div class="c-slides__3">
       <div class="js-slide-content c-slide-content">
       </div>
       <div class="js-slide-description c-slide-description is-hidden">
-        Il nostro sistema numerico è posizionale: la stessa cifra, ad esempio 4, ha un valore diverso a seconda di dove si trova
-
+        0, 1, 2, 3, ..., 31! Capito?
       </div>
     </div>
     <div class="c-slides__4">
       <div class="js-slide-content c-slide-content">
       </div>
       <div class="js-slide-description c-slide-description is-hidden">
-        Ad esempio, 44. I due 4 non valgono uguale, quello a destra sono le unità, e quel 4 vale proprio 4. Quello a sinistra invece è delle decine, quindi vale 40.
-
+Ok, facciamo un passo indietro. Come si fa a contare? Per contare servono due cose: un sistema numerico, per esprimere i numeri, e una regola per trovare il successivo (fare +1).
       </div>
     </div>
     <div class="c-slides__5">
       <div class="js-slide-content c-slide-content">
       </div>
       <div class="js-slide-description c-slide-description is-hidden">
-        44 si può scrivere 40 + 4. E il 40 sono 4 decine, cioè 4*10. Quindi, 44 lo posso scrivere 44 = 4*10 + 4*1
-
+Per esprimere i numeri: il nostro sistema numerico è decimale e posizionale. Decimale significa che abbiamo dieci cifre, da 0 a 9. Posizionale significa che una cifra ha un valore diverso a seconda di dove si trova.
       </div>
     </div>
     <div class="c-slides__6">
       <div class="js-slide-content c-slide-content">
       </div>
       <div class="js-slide-description c-slide-description is-hidden">
-        Vi ricordate quando alle elementari la maestra vi faceva scrivere i numeri con colori diversi per le unità, le decine, le centinaia..? Ecco, come bonus ora capiremo anche a che cosa serve!
-
+Ad esempio, 4124. I due 4 non valgono uguale, quello a destra sono le unità, e quel 4 vale proprio 4. Quello a sinistra invece sono migliaia, quindi vale 4000.
       </div>
     </div>
     <div class="c-slides__7">
       <div class="js-slide-content c-slide-content">
+        <div id="karatekid"></div>
       </div>
       <div class="js-slide-description c-slide-description is-hidden">
-        KarateKid, metto la cera, tolgo la cera
-
+E' come se sopra ogni cifra ci fosse un coefficiente che ti dice quanto vale: *1, *10, *100, *1000... E i valori sono le potenze del 10, perchè il sistema è decimale, appunto. 4124 = 4*1000 + 1*100 + 2*10 +4*1. 
       </div>
     </div>
     <div class="c-slides__8">
       <div class="js-slide-content c-slide-content">
       </div>
       <div class="js-slide-description c-slide-description is-hidden">
-        Tornando a noi, come contiamo? Abbiamo 10 simboli da usare, le cifre, da 0 a 9, e quando arriviamo a 9 che succede?
-
+Vi ricordate quando alle elementari la maestra vi faceva scrivere i numeri con colori diversi per le unità, le decine, le centinaia..? E' la stessa cosa.
       </div>
     </div>
     <div class="c-slides__9">
       <div class="js-slide-content c-slide-content">
       </div>
       <div class="js-slide-description c-slide-description is-hidden">
-        Succede come in un contachilometri: il 9 torna a 0 e aggiugni 1 alle decine: 10. 19 -> 20. 99 -> 100. 
-
+Ed è come KarateKid: dai la cera, togli la cera. Il maestro Kesuke Miyagi gli fa lucidare le macchine per giorni, e alla fine quegli stessi movimenti li userà per diventare un piccolo Bruce Lee.
       </div>
     </div>
     <div class="c-slides__10">
       <div class="js-slide-content c-slide-content">
       </div>
       <div class="js-slide-description c-slide-description is-hidden">
-        A questo punto ci chiediamo, che succede se invece che 10 simboli (le cifre da 0 a 9), ne usiamo solo 2 (0 e 1)?
-
+Quando qualcuno ti insegna qualcosa, a volte non sei ancora in grado di capire a che cosa ti potrà servire. Prima devi impararla nel modo noioso.
       </div>
     </div>
     <div class="c-slides__11">
       <div class="js-slide-content c-slide-content">
       </div>
       <div class="js-slide-description c-slide-description is-hidden">
-        0, 1, 10, 11, 100, 101, 110, 111, 1000
-
+Ma torniamo a noi, abbiamo visto come si scrivono i numeri, ora ci chiediamo, come si fa +1? come passiamo da un numero al successivo? Siamo abituati ad usare 10 simboli, cioè le cifre da 0 a 9, e quando arriviamo a 9 che succede?
       </div>
     </div>
     <div class="c-slides__12">
       <div class="js-slide-content c-slide-content">
       </div>
       <div class="js-slide-description c-slide-description is-hidden">
-        Adesso con le dita: ogni dita è uguale all'altra, vale 0 se è giù, 1 se è su. Ma sono in posizioni diverse, come le cifre in fila
-
+Succede come in un contachilometri: il 9 torna a 0 e aggiungi 1 a sinistra: 9 -> 10. 19 -> 20. 99 -> 100. Quando finisco le cifre torno a 0 e faccio +1 un posto più a sinistra.
       </div>
     </div>
     <div class="c-slides__13">
       <div class="js-slide-content c-slide-content">
       </div>
       <div class="js-slide-description c-slide-description is-hidden">
-        0, 1, (2) 10, (3) 11, (4) 100, (5) 101, (6) 110, (7) 111, (8) 1000
-
+Fantastico! Adesso proviamo a usare questa regola, ma invece che 10 simboli (le cifre da 0 a 9), usiamone solo 2 (lo 0 è il dito in basso, e l'1 è il dito in alto)
       </div>
     </div>
     <div class="c-slides__14">
       <div class="js-slide-content c-slide-content">
       </div>
       <div class="js-slide-description c-slide-description is-hidden">
-
+Quindi 0, poi 1, poi è come se fossi arrivato a 9, nel senso che sono alla fine, quindi torno a zero e aggiungo 1 a sinistra: 10. Poi 11.
       </div>
     </div>
     <div class="c-slides__15">
       <div class="js-slide-content c-slide-content">
       </div>
       <div class="js-slide-description c-slide-description is-hidden">
+0, 1, (2) 10, (3) 11, (4) 100, (5) 101, (6) 110, (7) 111, (8) 1000
       </div>
     </div>
     <div class="c-slides__16">
       <div class="js-slide-content c-slide-content">
       </div>
       <div class="js-slide-description c-slide-description is-hidden">
+Sappiamo come fare +1, perché è la stessa cosa di prima! E invece di avere base 10 abbiamo base 2: stiamo contando con i numeri binari.
       </div>
     </div>
     <div class="c-slides__17">
       <div class="js-slide-content c-slide-content">
       </div>
       <div class="js-slide-description c-slide-description is-hidden">
+Il pollice vale 1, l'indice 2, il medio 4, l'anulare 8, il mignolo 16
       </div>
     </div>
     <div class="c-slides__18">
       <div class="js-slide-content c-slide-content">
       </div>
       <div class="js-slide-description c-slide-description is-hidden">
+Quindi ad esempio, 10110 vale 2+4+16=22
       </div>
     </div>
     <div class="c-slides__19">
       <div class="js-slide-content c-slide-content">
       </div>
       <div class="js-slide-description c-slide-description is-hidden">
+Una notte d'estate, alle superiori, non riuscivo a dormire e ho contato usando entrambe le mani. A quanto si arriva? 32, 64, 128, 256, 512, quindi 1023.
       </div>
     </div>
     <div class="c-slides__20">
       <div class="js-slide-content c-slide-content">
       </div>
       <div class="js-slide-description c-slide-description is-hidden">
+Anche una cosa apparentemente banale come contare con le dita può essere uno spunto per qualcosa di interessante
       </div>
     </div>
     <div class="c-slides__21">

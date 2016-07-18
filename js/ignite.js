@@ -27,6 +27,7 @@ $(function () {
 
   function countSeconds() {
     if (pause) {return}
+    else if (slideNumber <= 100) {updateSlideNumber(1)}
     seconds = ((seconds - 99) % 15) +100;
     if (seconds == 100) {
       updateSlideNumber(1);
@@ -55,6 +56,7 @@ $(function () {
   function setSlide(number) {
     var content = $(".c-slides__"+(number-100)).html();
     $(".js-actual-content").html(content);
+    //$(".js-actual-content").find(".js-slide-content").css("backgroundImage", "url(img/"+(number-100)+".jpg)");
     animateSlide(number-100);
   }
 
@@ -234,8 +236,12 @@ function animateSlide(n) {
   var odoNumb = 0
   switch(n) {
     case 1:
+    console.log("WOW")
+    $(".js-author-name").css("font-size", "4vh");
       break;
     case 2:
+      break;
+    case 3:
       var el = document.querySelector(".js-dec-to-31");
       var decTo32 = new Odometer({
         el: el,
@@ -253,15 +259,14 @@ function animateSlide(n) {
         $(".js-bin-to-31").html(dec2bin(odoNumb+32));
         odoNumb += 1;
         console.log(slideNumber)
-        if (slideNumber == 102 && odoNumb < 32) {
+        if (slideNumber == 103 && odoNumb < 32) {
           setTimeout(countBaseTo32, 400);
         } else {
           return
         }
       };
+      console.log("COUNT!!!")
       countBaseTo32()
-      break;
-    case 3:
       break;
     case 4444:
       setTimeout(function(){

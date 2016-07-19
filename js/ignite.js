@@ -234,9 +234,11 @@ function setColor(n) {
 
 function animateSlide(n) {
   var odoNumb = 0
+  if (n in [1,2,3,5,6,8,9,10,11,12,13,15,16,17,18,19]) {
+    setTimeout(fadeOutContent, 14600)
+  }
   switch(n) {
     case 1:
-    console.log("WOW")
     $(".js-author-name").css("font-size", "4vh");
       break;
     case 2:
@@ -265,7 +267,6 @@ function animateSlide(n) {
           return
         }
       };
-      console.log("COUNT!!!")
       countBaseTo32()
       break;
     case 4444:
@@ -287,6 +288,18 @@ function animateSlide(n) {
     case 7:
       break;
     case 8:
+      setTimeout(function(){
+        $(".js-white").addClass("white-figure");
+        setTimeout(function(){
+          $(".js-red").addClass("red-figure");
+          setTimeout(function(){
+            $(".js-blue").addClass("blue-figure");
+            setTimeout(function(){
+            $(".js-green").addClass("green-figure");
+            }, 1000);
+          }, 1000);
+        }, 1000);
+      }, 1000);
       break;
     case 9:
       break;
@@ -313,12 +326,80 @@ function animateSlide(n) {
       }, 8000);
       break;
     case 12:
+      var after9vals = [0,9,10,19,20,99,100];
+      var index = 0
+      var el = document.querySelector(".js-what-after-9");
+      var whatAfter9 = new Odometer({
+        el: el,
+        format: 'd',
+        value: after9vals[0]+1000
+      })
+      function countAfter9() {
+        $(".js-what-after-9").html(after9vals[index]+1000);
+        index += 1;
+        console.log(slideNumber)
+        if (slideNumber == 112 && index < 7) {
+          setTimeout(countAfter9, 2000);
+        } else {
+          return
+        }
+      };
+      countAfter9()
       break;
     case 13:
+      var el = document.querySelector("#static-DEC");
+      var staticDec = new Odometer({
+        el: el,
+        format: 'd',
+        value: 122
+      })
+      var el = document.querySelector("#static-BIN");
+      var staticBin = new Odometer({
+        el: el,
+        format: 'd',
+        value: 110110
+      })
       break;
     case 14:
+      var after1val = 1;
+      var el = document.querySelector(".js-what-after-1");
+      var whatAfter1 = new Odometer({
+        el: el,
+        format: 'd',
+        value: 100000
+      })
+      function countAfter1() {
+        $(".js-what-after-1").html(dec2bin(after1val+32));
+        after1val += 1;
+        console.log(slideNumber)
+        console.log(after1val)
+        if (slideNumber == 114) {
+          setTimeout(countAfter1, 2000);
+        } else {
+          return
+        }
+      };
+      setTimeout(countAfter1, 1000);
       break;
     case 15:
+      var aafter1val = 8;
+      var el = document.querySelector(".js-what-aafter-1");
+      var whatAafter1 = new Odometer({
+        el: el,
+        format: 'd',
+        value: 100111
+      })
+      function countAafter1() {
+        $(".js-what-aafter-1").html(dec2bin(aafter1val+32));
+        aafter1val += 1;
+        console.log(slideNumber)
+        if (slideNumber == 115) {
+          setTimeout(countAafter1, 600);
+        } else {
+          return
+        }
+      };
+      countAafter1()
       break;
     case 16:
       wikiSlide()
@@ -416,4 +497,8 @@ function alternateFlame2 () {
   setTimeout(function(){
     alternateFlame1();
   }, 200)
+}
+
+function fadeOutContent() {
+  $(".c-actual-slide__content").find(".c-slide-content").addClass("is-opaque");
 }

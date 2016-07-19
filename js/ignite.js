@@ -27,10 +27,12 @@ $(function () {
 
   function countSeconds() {
     if (pause) {return}
-    else if (slideNumber <= 100) {updateSlideNumber(1)}
+    else if (slideNumber <= 100) {
+      nextSlide()
+    }
     seconds = ((seconds - 99) % 15) +100;
     if (seconds == 100) {
-      updateSlideNumber(1);
+      setTimeout(nextSlide,1000);
     }
     $(".js-seconds").html(seconds);
     if (slideNumber < 121) {
@@ -38,6 +40,10 @@ $(function () {
     } else if (slideNumber >= 121) {
       return
     }
+  }
+
+  function nextSlide() {
+    updateSlideNumber(1);
   }
 
   function updateSlideNumber(delta) {
@@ -90,7 +96,7 @@ $(function () {
     if (e.which == 39) {
       // go forward;
       seconds = 100;
-      updateSlideNumber(1);
+      nextSlide();
     }
     console.log( e.which );
   });
@@ -234,9 +240,11 @@ function setColor(n) {
 
 function animateSlide(n) {
   var odoNumb = 0
-  if (n in [1,2,3,5,6,8,9,10,11,12,13,15,16,17,18,19]) {
-    setTimeout(fadeOutContent, 14600)
+  setTimeout(fadeInContent, 100)
+  if ([1,2,3,5,6,8,9,10,11,12,13,15,16,17,18,19].indexOf(n) != -1) {
+    setTimeout(fadeOutContent, 14300)
   }
+  setTimeout(fadeOutChosen, 14300)
   switch(n) {
     case 1:
     $(".js-author-name").css("font-size", "4vh");
@@ -269,21 +277,9 @@ function animateSlide(n) {
       };
       countBaseTo32()
       break;
-    case 4444:
-      setTimeout(function(){
-        $('.slide4volume').removeClass("fa-volume-up").addClass("fa-volume-down");
-        setTimeout(function(){
-          $('.slide4volume').removeClass("fa-volume-down").addClass("fa-volume-off");
-        }, 1000);
-      }, 8000);
-      break;
     case 5:
       break;
     case 6:
-      setTimeout(function(){
-          $('.change-color').css("color", "rgba(123,10,123,0.7)")
-          $('.progress-bar').css("background-color", "rgba(123,10,123,0.7)")
-        }, 10000);
       break;
     case 7:
       break;
@@ -304,26 +300,11 @@ function animateSlide(n) {
     case 9:
       break;
     case 10:
-      setTimeout(function(){
-        $('.sitetree').append("<br><i class='fa fa-sitemap'></i><i class='fa fa-sitemap'></i>")
-        setTimeout(function(){
-          $('.sitetree').append("<br><i class='fa fa-sitemap'></i><i class='fa fa-sitemap'></i><i class='fa fa-sitemap'></i><i class='fa fa-sitemap'></i>")
-        }, 1000);
-      }, 8000);
       break;
     case 11:
       setTimeout(function(){
-        $('.duplicate').append(
-          '<br><i style="color: rgba(10,60,123,0.7); transition: color 1s;" class="dup1 fa fa-square-o"></i> ' +
-          '<i style="color: rgba(10,123,10,0.7); transition: color 1s;" class="dup2 fa fa-square-o"></i> ' +
-          '<i class="fa fa-arrow-right"></i> ' +
-          '<i style="color: rgba(20,133,133,0.7)" class="fa fa-square"></i> '
-        );
-        setTimeout(function(){
-          $('.dup1').css("color", "rgba(10,0,183,0.7)");
-          $('.dup2').css("color", "rgba(10,183,0,0.7)");
-        }, 1000)
-      }, 8000);
+        $(".c-actual-slide__content").find("#abaco").addClass("is-opaque");
+        }, 3000);
       break;
     case 12:
       var after9vals = [0,9,10,19,20,99,100];
@@ -402,103 +383,66 @@ function animateSlide(n) {
       countAafter1()
       break;
     case 16:
-      wikiSlide()
+      $(".c-actual-slide__content").find("#binario").addClass("is-opaque");
+        setTimeout(function(){
+          $(".c-actual-slide__content").find("#decimale").addClass("is-opaque");
+          setTimeout(function(){
+            $(".c-actual-slide__content").find("#binario").removeClass("is-hidden");
+          },600);
+        }, 5000);
       break;
     case 17:
       break;
     case 18:
+        setTimeout(function(){
+          $(".c-actual-slide__content").find(".over-1").addClass("red-figure");
+          setTimeout(function(){
+            $(".c-actual-slide__content").find(".over-2").addClass("green-figure");
+            setTimeout(function(){
+              $(".c-actual-slide__content").find(".over-4").addClass("green-figure");
+              setTimeout(function(){
+                $(".c-actual-slide__content").find(".over-8").addClass("red-figure");
+                setTimeout(function(){
+                  $(".c-actual-slide__content").find(".over-16").addClass("green-figure");
+                  setTimeout(function(){
+                    $(".c-actual-slide__content").find(".red-figure").addClass("is-opaque");
+                  }, 1500);
+                }, 1500);
+              }, 1500);
+            }, 1500);
+          }, 1500);
+        }, 2000);
       break;
     case 19:
-      setTimeout(function(){
-        $('.battery').removeClass("fa-battery-0").addClass("fa-battery-1");
-        setTimeout(function(){
-          $('.battery').removeClass("fa-battery-1").addClass("fa-battery-2");
-          setTimeout(function(){
-            $('.battery').removeClass("fa-battery-2").addClass("fa-battery-3");
-            setTimeout(function(){
-              $('.battery').removeClass("fa-battery-3").addClass("fa-battery-4");
-            }, 1000);
-          }, 1000);
-        }, 1000);
-      }, 10000);
       break;
     case 20:
+      setTimeout(function(){
+        $(".c-actual-slide__content").find(".last-binary").addClass("is-opaque");
+      }, 100);
+      setTimeout(function(){
+        $(".c-actual-slide__content").find(".last-binary-0").removeClass("is-opaque");
+        setTimeout(function(){
+          $(".c-actual-slide__content").find(".last-binary-1").removeClass("is-opaque");
+        }, 3000);
+      }, 6000);
       break;
     case 21:
+      $(".c-actual-slide").css("background-color", "white")
+      $(".js-author-name").css("font-size", "8vh");
+      $(".js-author-name").css("color", "white")
+      $(".js-slide-number").addClass("is-hidden")
       break;
   }
-}
-
-function wikiSlide() {
-  var content = ""
-  for (i=0;i<3;i++){
-    for (j=0;j<3;j++){
-      if ((i==1 && j==2)  ) {
-        content += "<i class='alternate-yellow fa fa-pencil' style='color: rgba(123,123,10,0.7); transition: color 0.5s ease;'></i> "
-      } else if ( i>0 && i<2 && j>0 && j<2 ) {
-        content += "<i class='fa fa-eye' style='opacity: 0;'></i> "
-      } else {
-        content += "<i class='fa fa-eye'></i> "
-      }
-    }
-    content += "<br>"
-  }
-
-  $('.wikislide').append(content);
-  alternateYellow1();
-}
-
-function wikiSlide2() {
-  var content = ""
-  for (i=0;i<20;i++){
-    for (j=0;j<20;j++){
-      if ((i==17 && j==6) || (i==16 && j==18) || (i==10 && j==4)) {
-        content += "<i class='alternate-yellow fa fa-pencil' style='color: rgba(123,123,10,0.7); transition: color 0.5s ease;'></i> "
-      } else if ( i>7 && i<12 && j>6 && j<13 ) {
-        content += "<i class='fa fa-eye' style='opacity: 0;'></i> "
-      } else {
-        content += "<i class='fa fa-eye'></i> "
-      }
-    }
-    content += "<br>"
-  }
-
-  $('.wikislide').append(content);
-  alternateYellow1();
-}
-
-function alternateYellow1 () {
-  $('.alternate-yellow').css('color', 'rgba(123,123,10,0.7)');
-  setTimeout(function(){
-    if($('.alternate-yellow').length > 3) {
-      alternateYellow2();
-    }
-  }, 500)
-}
-
-function alternateYellow2 () {
-  $('.alternate-yellow').css('color', 'rgba(163,163,10,0.7)')
-  setTimeout(function(){
-    if($('.alternate-yellow').length > 3) {
-      alternateYellow1();
-    }
-  }, 500)
-}
-
-function alternateFlame1 () {
-  $('#flame').css('color', 'rgba(255,83,13,0.6)')
-  setTimeout(function(){
-    alternateFlame2();
-  }, 1000)
-}
-
-function alternateFlame2 () {
-  $('#flame').css('color', 'rgba(255,83,13,1)')
-  setTimeout(function(){
-    alternateFlame1();
-  }, 200)
 }
 
 function fadeOutContent() {
   $(".c-actual-slide__content").find(".c-slide-content").addClass("is-opaque");
+}
+
+function fadeInContent() {
+  $(".c-actual-slide__content").find(".c-slide-content").find(".is-opaque").removeClass("is-opaque");
+}
+
+function fadeOutChosen() {
+  $(".c-actual-slide__content").find(".c-slide-content").find(".js-opaque-me").addClass("is-opaque");
 }

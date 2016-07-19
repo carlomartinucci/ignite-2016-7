@@ -1,5 +1,6 @@
 .c-actual-slide {
   background: black;
+  transition: background-color 10s linear;
 }
 
 .c-author-name {
@@ -36,7 +37,7 @@
   text-align: center;
   vertical-align: middle;
   margin: auto;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.6s ease;
 }
 
 
@@ -140,8 +141,15 @@ body {
 .inverted {
   -webkit-filter: invert(100%);
 }
+#decimale,
+#binario {
+  position: absolute;
+  transition: opacity 0.6s ease;
+}
 .big-number {
   font-size: 30vh;
+  opacity: 1;
+  transition: opacity 0.6s ease;
 }
 .big-number .under {
   position: relative;
@@ -152,6 +160,7 @@ body {
   position: absolute;
   top: -8vh;
   left: 5vh;
+  transition: opacity 0.6s ease, color 0.5s ease;
 }
 .picture {
   position: relative;
@@ -159,6 +168,8 @@ body {
   height: 70vh;
   top: 0;
   left: 0;
+  transition: opacity 0.6s ease;
+  opacity: 1;
 }
 .is-opaque {
   opacity: 0;
